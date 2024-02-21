@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: 18
       - run: npm install
-      - run: npm test:wasm
+      - run: npm run test:wasm
