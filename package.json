@@ -27,13 +27,15 @@
   "devDependencies": {
     "eslint": "^8.50.0",
     "eslint-config-google": "^0.14.0",
-    "tree-sitter-cli": "^0.20.8"
+    "tree-sitter-cli": "^0.20.8",
+    "web-tree-sitter": "^0.20.8"
   },
   "scripts": {
     "build": "tree-sitter generate && node-gyp build",
     "lint": "eslint grammar.js",
     "test": "tree-sitter test && tree-sitter parse examples/*.html --quiet --time",
-    "test-windows": "tree-sitter test"
+    "test-windows": "tree-sitter test",
+    "test:wasm":"npx tree-sitter build-wasm ./ && node ./wasm.test.js"
   },
   "tree-sitter": [
     {
